@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="button-container">
+      <button class="btn" (click)="navigateToAddPerson()">+ Add Person</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of persons; let i = index">
+          <td>{{ person.name }}</td>
+          <td>{{ person.email }}</td>
+          <td>{{ person.phone }}</td>
+  
+          <td>
+            <mat-icon (click)="editPerson(person, i)" style="color: #007bff; cursor: pointer;">edit</mat-icon>
+            <mat-icon (click)="deletePerson(person)" style="color: red; cursor: pointer;">delete</mat-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
